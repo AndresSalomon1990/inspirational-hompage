@@ -1,5 +1,11 @@
 /* global */
 @import "./partials/global";
 
-/* background-image */
-@import "./partials/background-image";
+/* BackgroundImage */
+@import "./partials/features/background-image";
+
+/* Weather */
+@import "./partials/features/weather";
+
+/* Quote */
+@import "./partials/features/quote";

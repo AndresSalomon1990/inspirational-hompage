@@ -1,27 +1,18 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  selectIcon,
-  selectDescription,
-  selectTemperature,
-  selectLat,
-  selectLon,
-  selectIsLoadingWeather,
-  selectHasError,
+  selectWeather,
   getWeather,
   setCoordinates,
-  setError } from './weatherSlice';
+  setError
+} from './weatherSlice';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Weather = () => {
-  const icon = useSelector(selectIcon);
-  const description = useSelector(selectDescription);
-  const temperature = useSelector(selectTemperature);
-  const lat = useSelector(selectLat);
-  const lon = useSelector(selectLon);
-  const isLoadingWeather = useSelector(selectIsLoadingWeather);
-  const hasError = useSelector(selectHasError);
+  const weather = useSelector(selectWeather);
   const dispatch = useDispatch();
 
+  // ask for geolocation permissions to get the coordinates
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -41,32 +32,30 @@ const Weather = () => {
   });
 
   useEffect(() => {
-    if (lat && lon) dispatch(getWeather({ lat, lon }));
-  }, [dispatch, lat, lon]);
+    if (weather.lat && weather.lon) dispatch(getWeather({ lat: weather.lat, lon: weather.lon }));
+  }, [dispatch, weather.lat, weather.lon]);
 
-  if (hasError) {
+  if (weather.hasError) {
     return (
       <div>
         Failed to get weather. Please allow permissions in your config
       </div>
     );
-  };
-
-  if (isLoadingWeather) {
+  } else if (weather.isLoading) {
     return (
-      <div>
-        Loading
+      <CircularProgress />
+    );
+  } else {
+    return (
+      <div className='weather-container'>
+        <img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt='Weather icon' />
+        <div className='weather-info'>
+          <p>{weather.description.toUpperCase()}</p>
+          <p>{weather.temperature.toFixed(1)}°C</p>
+        </div>
       </div>
     );
-  };
-
-  return (
-    <div className='weather-container'>
-      <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt='Weather icon' />
-      <p>{description}</p>
-      <p>{temperature}</p>
-    </div>
-  );
+  }
 };
 
 export default Weather;

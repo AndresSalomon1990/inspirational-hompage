@@ -3,10 +3,11 @@ import BackgroundImage from './features/backgroundImage/BackgroundImage';
 import NextBackgroundImageControl from './features/backgroundImage/components/NextBackgroundImageControl';
 import PreviousBackgroundImageControl from './features/backgroundImage/components/PreviousBackgroundImageControl';
 import Weather from './features/wheater/Weather';
+import Quote from './features/quote/Quote';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <BackgroundImage />
       <NextBackgroundImageControl />
       <PreviousBackgroundImageControl />
@@ -17,7 +18,7 @@ function App() {
         MAIN
       </main>
       <footer>
-        FOOTER
+        <Quote />
       </footer>
     </div>
   );

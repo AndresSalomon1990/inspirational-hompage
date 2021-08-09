@@ -6,7 +6,7 @@ const initialState = {
   icon: '',
   description: '',
   temperature: '',
-  isLoadingWeather: true, // starts true because it will ask for geolocation permissions
+  isLoading: true, // starts true because it will ask for geolocation permissions
   hasError: false
 };
 
@@ -41,29 +41,23 @@ export const weatherSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getWeather.pending, (state) => {
-        state.isLoadingWeather = true;
+        state.isLoading = true;
         state.hasError = false;
       })
       .addCase(getWeather.fulfilled, (state, action) => {
         state.icon = action.payload.icon;
         state.description = action.payload.description;
         state.temperature = action.payload.temperature;
-        state.isLoadingWeather = false;
+        state.isLoading = false;
         state.hasError = false;
       })
       .addCase(getWeather.rejected, (state) => {
-        state.isLoadingWeather = false;
+        state.isLoading = false;
         state.hasError = true;
       })
   }
 });
 
 export const { setCoordinates, setError } = weatherSlice.actions;
-export const selectIcon = state => state.weather.icon;
-export const selectDescription = state => state.weather.description;
-export const selectTemperature = state => state.weather.temperature;
-export const selectIsLoadingWeather = state => state.weather.isLoadingWeather;
-export const selectHasError = state => state.weather.hasError;
-export const selectLat = state => state.weather.lat;
-export const selectLon = state => state.weather.lon;
+export const selectWeather = state => state.weather;
 export default weatherSlice.reducer;

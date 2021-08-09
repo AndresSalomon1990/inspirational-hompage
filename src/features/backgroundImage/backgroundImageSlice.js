@@ -23,7 +23,7 @@ export const backgroundImageSlice = createSlice({
   reducers: {
     nextBackgroundImage: (state, action) => {
       let n = state.currentBackgroundImageIndex + 1;
-      if (n > state.imageUrls.length) n = 0;
+      if (n > state.imageUrls.length - 1) n = 0;
       state.currentBackgroundImageIndex = n;
     },
     previousBackgroundImage: (state, action) => {
