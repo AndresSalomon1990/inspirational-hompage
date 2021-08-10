@@ -4,6 +4,7 @@ import NextBackgroundImageControl from './features/backgroundImage/components/Ne
 import PreviousBackgroundImageControl from './features/backgroundImage/components/PreviousBackgroundImageControl';
 import Weather from './features/wheater/Weather';
 import Quote from './features/quote/Quote';
+import Goal from './features/goal/Goal';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Weather />
       </header>
       <main>
-        MAIN
+        <Goal />
       </main>
       <footer>
         <Quote />

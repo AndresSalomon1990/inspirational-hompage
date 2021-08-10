@@ -50,8 +50,8 @@ const Weather = () => {
       <div className='weather-container'>
         <img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt='Weather icon' />
         <div className='weather-info'>
+          <p className='weather-temperature'>{weather.temperature.toFixed(1)}°C</p>
           <p>{weather.description.toUpperCase()}</p>
-          <p>{weather.temperature.toFixed(1)}°C</p>
         </div>
       </div>
     );

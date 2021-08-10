@@ -167,6 +167,10 @@
   color: #fff;
 }
 
+.weather-container .weather-info .weather-temperature {
+  font-size: 2em;
+}
+
 .weather-container:hover {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -184,5 +188,10 @@
   padding: 5px;
   text-align: center;
   color: #fff;
+}
+
+/* Goal */
+.goal-form-wrapper {
+  width: 50vw;
 }
 /*# sourceMappingURL=index.css.map */

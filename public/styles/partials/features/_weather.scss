@@ -11,6 +11,10 @@
     display: flex;
     flex-direction: column;
     color: #fff;
+
+    .weather-temperature {
+      font-size: 2em;
+    }
   }
 }
 
