@@ -51,7 +51,7 @@
     height: fit-content;
     padding: 12px 12px;
 
-    ul {
+    .goal-entries-list {
       list-style: none;
       padding: 0;
       display: flex;
@@ -118,40 +118,41 @@
         }
       }
 
+      .goal {
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .red {
+        backdrop-filter: blur(4px);
+        background: rgba(230, 57, 70, 0.25) !important; // to override the !important that Materialize.css add
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      .blue {
+        backdrop-filter: blur(4px);
+        background: rgba(69, 123, 157, 0.25) !important; // to override the !important that Materialize.css add
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      .green {
+        backdrop-filter: blur(4px);
+        background: rgba(88, 129, 87, 0.25) !important; // to override the !important that Materialize.css add
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      .orange {
+        backdrop-filter: blur(4px);
+        background: rgba(247, 127, 0, 0.25) !important; // to override the !important that Materialize.css add
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
       .isDone {
         background: rgba(155, 155, 155, 0.25);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         opacity: 0.25;
       }
-
-      li {
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-      }
-
-      // .red {
-      //   backdrop-filter: blur(4px);
-      //   background: rgba(230, 57, 70, 0.25);
-      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      // }
-    
-      // .blue {
-      //   backdrop-filter: blur(4px);
-      //   background: rgba(69, 123, 157, 0.25);
-      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      // }
-    
-      // .green {
-      //   backdrop-filter: blur(4px);
-      //   background: rgba(88, 129, 87, 0.25);
-      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      // }
-    
-      // .orange {
-      //   backdrop-filter: blur(4px);
-      //   background: rgba(247, 127, 0, 0.25);
-      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      // }
     }
 
     ul > * {

@@ -11,9 +11,9 @@ const GoalEntries = () => {
 
   return (
     <div className='goal-entries-container'>
-      <ul>
+      <ul className='goal-entries-list'>
         {goals.map((g, index) => (
-          <li key={g.id} className={`${getGoalColor(index)}`}>
+          <li key={g.id} className={`${getGoalColor(index)} goal ${g.isDone ? 'isDone' : ''}`}>
             <GoalEntry id={g.id} isDone={g.isDone} text={g.text} />
           </li>
         ))}

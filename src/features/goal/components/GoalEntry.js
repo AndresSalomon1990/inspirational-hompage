@@ -10,7 +10,7 @@ const GoalEntry = ({ text, id, isDone }) => {
   const handleRemoveGoal = () => dispatch(removeGoal(id));
 
   return (
-    <div className={`goal-entry-container ${isDone ? 'isDone' : ''}`}>
+    <div className='goal-entry-container'>
       <div className='goal-entry-actions-container'>
         <button onClick={handleCompleteGoal} type='button' className='done-button'>
           Done
