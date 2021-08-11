@@ -1,3 +1,162 @@
-.goal-form-wrapper {
-  width: 50vw;
+.goal-container {
+  display: flex;
+  width: 70vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .goal-form-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    height: fit-content;
+    padding: 12px 12px;
+    margin-bottom: 5px;
+
+    h3 {
+      margin: 0;
+      width: fit-content;
+      color: #fff;
+    }
+
+    input[type="text"] {
+      color: #fff;
+    }
+
+    /* label color */
+    .input-field label {
+      color: #fff;
+    }
+    /* label focus color */
+    .input-field input[type="text"]:focus + label {
+      color: #fff;
+    }
+    /* label underline focus color */
+    .input-field input[type="text"]:focus {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff;
+    }
+  }
+
+  .goal-entries-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    height: fit-content;
+    padding: 12px 12px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .goal-entry-container {
+        position: relative;
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: fit-content;
+        padding: 12px 12px;
+        position: relative;
+        font-size: 18px;
+        color: #fff;
+
+        .goal-entry-actions-container {
+          position: absolute;
+          top: -12px;
+          right: -12px;
+          display: flex;
+          opacity: 0;
+          transition: opacity 0.1s ease-in;
+
+          button {
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: filter 0.2s ease-in;
+            outline: none;
+            color: white;
+            font-weight: 700;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 0.5em;
+
+            &:hover {
+              filter: brightness(1.3);
+            }
+          }
+
+          .remove-button {
+            background: rgba(208, 2, 27, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          }
+
+          .done-button {
+            background: rgba(80, 227, 194, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          }
+        }
+
+        .goal-entry-actions-container > * {
+          margin-right: 6px;
+        }
+
+        &:hover .goal-entry-actions-container {
+          opacity: 1;
+        }
+      }
+
+      .isDone {
+        background: rgba(155, 155, 155, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        opacity: 0.25;
+      }
+
+      li {
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      // .red {
+      //   backdrop-filter: blur(4px);
+      //   background: rgba(230, 57, 70, 0.25);
+      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      // }
+    
+      // .blue {
+      //   backdrop-filter: blur(4px);
+      //   background: rgba(69, 123, 157, 0.25);
+      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      // }
+    
+      // .green {
+      //   backdrop-filter: blur(4px);
+      //   background: rgba(88, 129, 87, 0.25);
+      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      // }
+    
+      // .orange {
+      //   backdrop-filter: blur(4px);
+      //   background: rgba(247, 127, 0, 0.25);
+      //   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      // }
+    }
+
+    ul > * {
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+  }
 }

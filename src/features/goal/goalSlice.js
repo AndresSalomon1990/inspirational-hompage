@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
-  allGoals: [
-    { text: 'Water plants', isDone: false },
-    { text: 'Wash dishes', isDone: false },
-    { text: 'Study for the exam', isDone: false }
-  ],
-  goalsDone: []
+  goals: [
+    { id: uuidv4(), text: 'Water plants', isDone: false },
+    { id: uuidv4(), text: 'Wash dishes', isDone: false },
+    { id: uuidv4(), text: 'Study for the exam', isDone: false }
+  ]
 };
 
 export const goalSlice = createSlice({
@@ -15,23 +15,23 @@ export const goalSlice = createSlice({
   reducers: {
     addGoal: (state, action) => {
       const text = action.payload;
-      state.allGoals.push({ text: text, isDone: false });
+      state.goals.push({ id: uuidv4(), text: text, isDone: false });
     },
     completeGoal: (state, action) => {
       const id = action.payload;
-      const index = state.allGoals.findIndex(g => g.id === id);
+      const index = state.goals.findIndex(g => g.id === id);
       if (index !== -1) {
-        state.allGoals[index].done = true;
-        state.goalsDone.push(state.allGoals[index]);
+        state.goals[index].isDone = true;
       };
     },
     removeGoal: (state, action) => {
       const id = action.payload;
-      const index = state.allGoals.findIndex(g => g.id === id)
-      if (index !== -1) state.allGoals.splice(index, 1);
+      const index = state.goals.findIndex(g => g.id === id)
+      if (index !== -1) state.goals.splice(index, 1);
     }
   }
 });
 
 export const { addGoal, completeGoal, removeGoal } = goalSlice.actions;
+export const selectGoals = state => state.goal.goals;
 export default goalSlice.reducer;

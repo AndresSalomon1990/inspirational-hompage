@@ -11,9 +11,13 @@ const Quote = () => {
   }, [dispatch]);
 
   if (hasError) {
-    return (<div> Error fetching the quote.</div>);
+    return (
+      <div className='quote-error-container'> Error fetching the quote. Please refresh the page.</div>
+    );
   } else if (isLoading) {
-    return (<div className='quote-container'>Loading quote...</div>);
+    return (
+      <div className='quote-container'>Loading quote...</div>
+    );
   } else {
     return (
       <div className='quote-container'>

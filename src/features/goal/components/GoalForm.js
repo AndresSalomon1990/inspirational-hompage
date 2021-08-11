@@ -19,7 +19,8 @@ const GoalForm = () => {
   };
 
   return (
-    <div className='goal-form-wrapper'>
+    <div className='goal-form-container'>
+      <h3>What's on your mind today?</h3>
       <form onSubmit={handleSubmit}>
         <div className='input-field'>
           <input
@@ -28,7 +29,7 @@ const GoalForm = () => {
             value={goal}
             onChange={handleChange}
             aria-label='New goal' />
-          <label for='new-goal'>New goal</label>
+          <label htmlFor='new-goal'>New goal</label>
         </div>
         <input type="submit" style={{display: 'none'}} />
       </form>
